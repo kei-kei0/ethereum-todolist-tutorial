@@ -20,6 +20,12 @@ contract ToDoList {
 
     mapping(uint => Task) public tasks;
 
+    event TaskCreated(
+        uint id,
+        string content,
+        bool completed
+    );
+
     constructor() public {
         createTask("Check out dappuniv");
     }
@@ -27,5 +33,6 @@ contract ToDoList {
     function createTask(string memory _content) public {
         addTaskCount();
         tasks[getTaskCount()] = Task(getTaskCount(), _content, false);
+        emit TaskCreated(getTaskCount(), _content, false);
     }
 }

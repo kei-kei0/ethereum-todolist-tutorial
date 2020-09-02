@@ -27,3 +27,14 @@ task = await todolist.tasks(1)
 task.id.toNumber()
 task.content
 ```
+
+# run local server for frontend
+```
+npm run dev
+# then we can see the contracts on the blockchain from the browser.
+```
+
+# run tests
+```
+truffle test
+```

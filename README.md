@@ -1,6 +1,11 @@
 https://www.dappuniversity.com/articles/blockchain-app-tutorial
 https://youtu.be/rzvk2kdjr2I
 
+# compile contracts
+```
+truffle compile
+```
+
 # how to communicate with BlockChain(local)
 ```
 # 1. run ganache

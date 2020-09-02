@@ -11,7 +11,7 @@ truffle compile
 # 1. run ganache
 
 # 2. migrate with the following command
-truffle migrate
+truffle migrate --reset
 
 # 3. start truffle console
 truffle console
@@ -22,10 +22,8 @@ todolist = await ToDoList.deployed()
 # get contract address
 todolist.address
 
-# add taskCount
-todolist.addTaskCount()
-
-# get taskCount
-let cnt = await todolist.get()
-cnt.toNumber()
+# get task info
+task = await todolist.tasks(1)
+task.id.toNumber()
+task.content
 ```

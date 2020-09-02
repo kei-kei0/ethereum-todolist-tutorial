@@ -8,7 +8,24 @@ contract ToDoList {
         taskCount += 1;
     }
 
-    function get() public view returns (uint) {
+    function getTaskCount() public view returns (uint) {
         return taskCount;
+    }
+
+    struct Task {
+        uint id;
+        string content;
+        bool completed;
+    }
+
+    mapping(uint => Task) public tasks;
+
+    constructor() public {
+        createTask("Check out dappuniv");
+    }
+
+    function createTask(string memory _content) public {
+        addTaskCount();
+        tasks[getTaskCount()] = Task(getTaskCount(), _content, false);
     }
 }
